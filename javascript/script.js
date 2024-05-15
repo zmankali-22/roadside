@@ -1,39 +1,31 @@
 //  list of product in an array of object
 
-const products = [
-  { id: 1, name: "Product A", price: 20, category: "Electronics" },
-  { id: 2, name: "Product B", price: 30, category: "Clothing" },
-  { id: 3, name: "Product C", price: 40, category: "Electronics" },
-  { id: 4, name: "Product D", price: 50, category: "Clothing" },
-  { id: 5, name: "Product E", price: 60, category: "Electronics" },
-  { id: 6, name: "Product F", price: 70, category: "Electronics" },
-];
-
-const names = ["alice", "fred", "charlie", "fred"];
-const newNames = [...new Set(names)];
-
 function App() {
-  return <div>
-
-    <Counter />
-  </div>;
+  return (
+    <div>
+      <ParentComponent />
+    </div>
+  );
 }
 
-class Counter extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      count: 0,
-    };
-
-  }
-  incrementCount = () =>
-    this.setState({ count: this.state.count + 1 });
+class ParentComponent extends React.Component {
   render() {
     return (
+      <ChildComponent name="John" age={25}>
+        <p>This is children</p>
+      </ChildComponent>
+    );
+  }
+}
+
+class ChildComponent extends React.Component {
+  render() {
+    const { name, age, children } = this.props;
+    return (
       <div>
-        <h1>{this.state.count}</h1>
-        <button onClick={this.incrementCount}>Increment</button>
+        <h1>Name: {name}</h1>
+        <h2>Age:{age}</h2>
+        <h3>Children:{children}</h3>
       </div>
     );
   }
