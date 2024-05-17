@@ -2,6 +2,8 @@
 import './App.css'
 import Counter from './components/Counter'
 import UseEffectHook from './components/UseEffectHook'
+import UseImperativeHandleHook from './components/UseImperativeHandleHook'
+import UseMemoAndUseCallbackHook from './components/UseMemoAndUseCallbackHook'
 import UseReduceHook from './components/UseReduceHook'
 
 function App() {
@@ -11,7 +13,10 @@ function App() {
      <p>Hello world</p>
      {/* <UseEffectHook /> */}
      {/* <Counter /> */}
-     <UseReduceHook />
+     {/* <UseReduceHook />
+     < */}
+     {/* <UseMemoAndUseCallbackHook /> */}
+     <UseImperativeHandleHook />
     </>
   )
 }
