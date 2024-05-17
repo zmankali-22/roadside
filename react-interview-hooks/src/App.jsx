@@ -1,13 +1,15 @@
 
 import './App.css'
-import UseStateHook from './components/UseStateHook'
+import Counter from './components/Counter'
+import UseEffectHook from './components/UseEffectHook'
 
 function App() {
 
   return (
     <>
      <p>Hello world</p>
-     <UseStateHook />
+     <UseEffectHook />
+     <Counter />
     </>
   )
 }
