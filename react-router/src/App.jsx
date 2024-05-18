@@ -1,5 +1,8 @@
 import {
+  BrowserRouter,
+  Route,
   RouterProvider,
+  Routes,
   createBrowserRouter,
 } from "react-router-dom";
 import AppLayout from "./layouts/AppLayout";
@@ -34,5 +37,6 @@ function App() {
     </>
   );
 }
+
 
 export default App;
