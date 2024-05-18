@@ -9,24 +9,43 @@ import AppLayout from "./layouts/AppLayout";
 import Home from "./pages/Home";
 import PostList, { postLoader } from "./pages/PostList";
 import PostComments from "./pages/PostComments";
+import Error from "./components/Error";
+import Login from "./components/Login";
+import Signup from "./components/Signup";
+import RequiredAuth from "./components/RequiredAuth";
 
 const router = createBrowserRouter([
   {
     element: <AppLayout />,
+    errorElement: <Error />,
     children: [
       {
-        path: "/",
+        path: "/auth",
         element: <Home />,
+        children: [
+          {
+            path: "login",
+            element: <Login />,
+          },
+          {
+            path: "signup",
+            element: <Signup />,
+          },
+        ],
       },
       {
         path: "/posts",
-        element: <PostList />,
-        loader: postLoader
+        element: (
+          <RequiredAuth>
+            <PostList />,
+          </RequiredAuth>
+        ),
+        loader: postLoader,
       },
       {
         path: "/posts/:postId",
         element: <PostComments />,
-      }
+      },
     ],
   },
 ]);
@@ -37,6 +56,5 @@ function App() {
     </>
   );
 }
-
 
 export default App;

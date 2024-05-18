@@ -18,7 +18,7 @@ export default function Header() {
         //         textDecoration: isTransitioning? 'slide' : '', 
         //     }
         // }}
-        to="/"
+        to="/auth"
       >
         Home
       </NavLink>
