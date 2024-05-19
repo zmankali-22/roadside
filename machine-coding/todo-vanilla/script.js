@@ -19,8 +19,11 @@ document.addEventListener("DOMContentLoaded", function () {
       } else {
         // add todos
         addTodoItem(todoText);
-       
+      
+
       }
+      todoInput.value = "";
+      todoInput.focus()
     } else {
       alert("Please enter a valid task");
     }
